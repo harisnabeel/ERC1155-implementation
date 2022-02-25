@@ -96,4 +96,8 @@ contract PubgItems is ERC1155, Ownable {
     function get_PBG_supply() public view returns (uint256) {
         return _PBG_coin_supply;
     }
+
+    function get_PBG_price() public view returns (uint256) {
+        return _PBG_price;
+    }
 }
