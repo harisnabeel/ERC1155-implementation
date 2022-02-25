@@ -10,11 +10,10 @@ import "hardhat/console.sol";
 contract PubgItems is ERC1155, Ownable {
     uint256 private _PBG_coin_supply;
     uint256 private _PBG_price;
-    mapping(uint256 => uint256) public collectionsMintingFees; // collection to fees
+    mapping(uint256 => uint256) public collectionsMintingFees; // collections to fees in PBG tokens
     uint256 collectionsCount; //total collections count
 
     // _initial_PBG_price is value in WEI
-    // _initial_minting in WEI
     constructor(uint256 _initial_supply, uint256 _initial_PBG_price)
         ERC1155("")
     {
