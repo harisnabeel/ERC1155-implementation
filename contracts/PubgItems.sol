@@ -34,8 +34,9 @@ contract PubgItems is ERC1155, Ownable {
     ) public onlyOwner {
         collectionsCount++;
         tokenCounter.increment();
-        collectionsMintingFees[tokenCounter.current()] = _collectionMintingFees;
+        collectionsMintingFees[collectionsCount] = _collectionMintingFees;
         _mint(msg.sender, tokenCounter.current(), _quantityOfToken, "");
+        // console.log(collectionsMintingFees[collectionsCount]);
     }
 
     // minting in a collection
@@ -43,16 +44,17 @@ contract PubgItems is ERC1155, Ownable {
         require(_id != 1, "You can not mint PGB tokens");
         require(
             balanceOf(msg.sender, 1) >=
-                _quantityOfToken * collectionsMintingFees[_id],
+                _quantityOfToken * collectionsMintingFees[_id - 1],
             "Need to spend some more PBG tokens"
         );
         _safeTransferFrom(
             msg.sender,
             owner(),
             1,
-            _quantityOfToken * collectionsMintingFees[_id],
+            _quantityOfToken * collectionsMintingFees[_id - 1],
             ""
         );
+        // console.log(balanceOf(msg.sender, 1), "haris nabeel");
         _mint(msg.sender, _id, _quantityOfToken, "");
     }
 
@@ -77,6 +79,15 @@ contract PubgItems is ERC1155, Ownable {
         onlyOwner
     {
         collectionsMintingFees[_id] = _newFees;
+    }
+
+    function getCollectionMintingFees(uint256 _id)
+        public
+        view
+        returns (uint256)
+    {
+        // console.log(collectionsMintingFees[_id], "Haris nabeel", _id);
+        return collectionsMintingFees[_id];
     }
 
     function getCollectionsCount() public view returns (uint256) {
