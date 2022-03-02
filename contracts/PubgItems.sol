@@ -19,7 +19,7 @@ contract PubgItems is ERC1155, Ownable {
     {
         _PBG_price = _initial_PBG_price;
         _PBG_coin_supply = _initial_supply;
-        tokenCounter.increment();
+        tokenCounter.increment(); // this will be PBG/utility token, and will be FT token.
         _mint(msg.sender, tokenCounter.current(), _initial_supply, "");
     }
 
