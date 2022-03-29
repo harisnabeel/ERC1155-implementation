@@ -1,0 +1,8 @@
+{
+  "name": "Bomb",
+  "description": "Granite type bomb",
+  "image": "ipfs://QmZTLziAHT3mw9qpGt8e2NwJYsUJ3Ye7UF8TXTMRnnoBJX/4.png",
+  "properties": {
+    "deadly": "56%"
+  }
+}

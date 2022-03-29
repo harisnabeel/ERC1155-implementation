@@ -1,0 +1,8 @@
+{
+  "name": "War Car",
+  "description": "Special car for wars",
+  "image": "ipfs://QmZTLziAHT3mw9qpGt8e2NwJYsUJ3Ye7UF8TXTMRnnoBJX/3.png",
+  "properties": {
+    "speed": "30mph"
+  }
+}

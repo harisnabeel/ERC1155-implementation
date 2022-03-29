@@ -1,0 +1,8 @@
+{
+  "name": "AK47 GUN",
+  "description": "This is a gun used in wars",
+  "image": "ipfs://QmZTLziAHT3mw9qpGt8e2NwJYsUJ3Ye7UF8TXTMRnnoBJX/2.png",
+  "properties": {
+    "strength": "87"
+  }
+}
